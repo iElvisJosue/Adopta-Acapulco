@@ -1,0 +1,735 @@
+:root{
+    --ColorTexto: #e6e7ef;
+    --MenuP: #272a32;
+    --FondoP: #1a1c22;
+    --FondoAdopcion: #232736;
+    --FondoBotones: #323a4e;
+    --FondoTarjetas: #1f8bff;
+    --TamañoTexto: 14px;
+    --TamañoIconos: 18px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--TamañoTexto);
+    transition: 1s;
+    color: var(--ColorTexto);
+    font-family: 'Nunito', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: var(--Negro);
+}
+.Main{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 5% 70% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: "MenuPrincipal Contenido Perfil";
+}
+/********* CSS DEL MENU PRINCIPAL *********/
+.MenuPrincipal{
+    width: 100%;
+    height: 100%;
+    grid-area: MenuPrincipal;
+    background: var(--MenuP);
+    display: flex;
+    flex-direction: column;
+}
+.MenuPrincipal .Logo{
+    width: 100%;
+    height: 8%;
+    display: grid;
+    place-content: center;
+}
+.MenuPrincipal .Logo img{
+    width: 100%;
+}
+.MenuPrincipal .Opciones{
+    width: 100%;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.MenuPrincipal .Opciones i{
+    font-size: var(--TamañoIconos);
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+.MenuPrincipal .Opciones i:hover{
+    cursor: pointer;
+}
+.MenuPrincipal .Opciones i:nth-child(1){
+    background: var(--FondoP);
+    border-radius: 35px 0px 0px 35px;
+}
+/********* CSS DEL CONTENIDO *********/
+.Contenido{
+    grid-area: Contenido;
+    background: var(--FondoP);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 8% 35% auto;
+    grid-template-areas: "Buscar Buscar" 
+    "PorQueAdoptar PorQueAdoptar" 
+    "TodasLasPublicaciones TodasLasPublicaciones";
+    padding: 0px 40px;
+    gap: 20px;
+    overflow: auto;
+}
+.Contenido::-webkit-scrollbar{
+    display: none;
+}
+.Contenido .Buscar{
+    grid-area: Buscar;
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--FondoP);
+}
+.Contenido .Buscar input{
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+}
+.Contenido .Buscar input:focus{
+    outline: none;
+}
+.Contenido .Buscar input::placeholder{
+    color: var(--ColorTexto);
+}
+.Contenido .Buscar i{
+    position: absolute;
+    font-size: var(--TamañoIconos);
+}
+.Contenido .Buscar i:nth-child(3){
+    cursor: pointer;
+    display: none;
+    right: 0;
+}
+.Contenido .PorQueAdoptar{
+    grid-area: PorQueAdoptar;
+    background: var(--FondoAdopcion);
+    border-radius: 15px;
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30% 70%;
+    grid-template-areas: "TitlePQA TitlePQA"
+    "ImgAnimales BeneficionesPQA";
+    gap: 10px;
+}
+
+.Contenido .PorQueAdoptar .TitlePQA{
+    grid-area: TitlePQA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Contenido .PorQueAdoptar .TitlePQA p:nth-child(1){
+    font-size: calc(var(--TamañoTexto) * 2);
+}
+.Contenido .PorQueAdoptar .TitlePQA p:nth-child(2){
+    cursor: pointer;
+}
+.Contenido .PorQueAdoptar .TitlePQA p:nth-child(2) i{
+    font-size: calc(var(--TamañoTexto) - 6px);
+}
+.Contenido .PorQueAdoptar .ImgAnimales{
+    grid-area: ImgAnimales;
+    border-radius: 15px;
+    background: linear-gradient(
+        rgba(0,0,0,.3),
+        rgba(0,0,0,.3)
+    ), 
+    url(Imagenes/PorqueAdoptar.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120%;
+    width: 100%;
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA{
+    grid-area: BeneficionesPQA;
+    display: flex;
+    gap: 10px;
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio{
+    background: var(--FondoBotones);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 90%;
+    border-radius: 15px;
+    border: 2px solid #484f61;
+    text-align: center;
+    padding: 0px 15px;
+    gap: 10px;
+    overflow: hidden;
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio i{
+    font-size: calc(var(--TamañoTexto) * 2);
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio p:nth-child(2){
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.Contenido .TodasLasPublicaciones{
+    grid-area: TodasLasPublicaciones;
+    margin-top: 40px;
+    padding: 15px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px 200px;
+    gap: 10px;
+}
+.Contenido .TodasLasPublicaciones .TitlePublicaciones {
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Contenido .TodasLasPublicaciones .TitlePublicaciones p{
+    font-size: calc(var(--TamañoTexto) * 2);
+}
+.Contenido .TodasLasPublicaciones .TitlePublicaciones i{
+    font-size: var(--TamañoIconos);
+    background: var(--FondoP);
+    border: 2px solid #484f61;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Contenido .TodasLasPublicaciones .TitlePublicaciones i:hover{
+    cursor: pointer;
+    background: #484f61;
+}
+.Contenido .TodasLasPublicaciones .Publicacion{
+    position: relative;
+    grid-column: span 1; 
+    max-height: 200px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    background: var(--FondoBotones);
+    border-radius: 15px;
+}
+
+.Contenido .TodasLasPublicaciones .Publicacion:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0px rgba(72, 79, 97, 1);
+    transform: scale(.95);
+}
+.Contenido .TodasLasPublicaciones .Publicacion img{
+    width: 100%;
+    height: 60%;
+    border-radius: 15px 15px 0px 0px;
+}
+.Contenido .TodasLasPublicaciones .Publicacion::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(
+        rgba(0,0,0,.3),
+        rgba(0,0,0,.3)
+    );
+    border-radius: 15px 15px 0px 0px;
+}
+.Contenido .TodasLasPublicaciones .Publicacion .DatosPublicacion{
+    height: 13%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    opacity: .5;
+    overflow: hidden;
+}
+.Contenido .TodasLasPublicaciones .Publicacion .MensajePublicacion{
+    height: 27%;
+    padding: 5px;
+    font-weight: bold;
+}
+/********* CSS DEL PERFIL *********/
+.Perfil{
+    grid-area: Perfil;
+    background-image: linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+    ),
+    url(Imagenes/ProfileBG.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.VerPerfil{
+    transform: scale(1) !important;
+}
+.Perfil .Notificaciones{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.Perfil .Notificaciones i{
+    font-size: var(--TamañoIconos);
+    padding: 10px;
+    border-radius: 10px;
+}
+.Perfil .Notificaciones i:hover{
+    cursor: pointer;
+    color: var(--FondoBotones);
+    background: var(--ColorTexto);
+}
+.Perfil .Notificaciones i:nth-child(2){
+    display: none;
+}
+.Perfil .InformacionPersonal{
+    width: 100%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Perfil .InformacionPersonal img{
+    width: 25%;
+    background: var(--FondoP);
+    border-radius: 50%;
+    border: 3px solid var(--ColorTexto);
+}
+.Perfil .TusAdopciones{
+    position: relative;
+    width: 100%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Perfil .TusAdopciones::after{
+    position: absolute;
+    content: "";
+    width: 85%;
+    height: 1px;
+    background: var(--ColorTexto);
+    opacity: .5;
+    bottom: 0;
+}
+.Perfil .TusAdopciones::before{
+    position: absolute;
+    content: "";
+    width: 85%;
+    height: 1px;
+    background: var(--ColorTexto);
+    opacity: .5;
+    top: 0;
+}
+.Perfil .TusAdopciones p:nth-child(2){
+    font-size: calc(var(--TamañoTexto) * 4);
+}
+.Perfil .TusAdopciones button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 30%;
+    padding: 10px 15px;
+    background: var(--FondoBotones);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+.Perfil .TusAdopciones button i{
+    font-size: calc(var(--TamañoTexto) - 6px);
+}
+.Perfil .TusAdopciones button:hover{
+    cursor: pointer;
+    color: var(--FondoBotones);
+    background: var(--ColorTexto);
+}
+.Perfil .TusAdopciones button:hover i{
+    color: var(--FondoBotones);
+}
+.Perfil .TusCertificaciones{
+    position: relative;
+    width: 100%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 25px;
+    gap: 10px;
+    overflow: hidden;
+}
+.Perfil .TusCertificaciones .VerCertificaciones{
+    position: relative;
+    width: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+.Perfil .TusCertificaciones .Izquierda{
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 10px;
+    background: var(--FondoBotones);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+.Perfil .TusCertificaciones .Izquierda:hover{
+    cursor: pointer;
+    color: var(--FondoBotones);
+    background: var(--ColorTexto);
+}
+.Perfil .TusCertificaciones .Derecha{
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 10px;
+    background: var(--FondoBotones);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.Perfil .TusCertificaciones .Derecha:hover{
+    cursor: pointer;
+    color: var(--FondoBotones);
+    background: var(--ColorTexto);
+}
+.VerCertificacionesCompletas{
+    transform: translateX(-190px);
+}
+.VerCertificacionesCompletas2{
+    transform: translateX(-380px);
+}
+.VerCertificacionesCompletas3{
+    transform: translateX(-520px);
+}
+
+.CertificacionAP, .CertificacionBA, .CertificacionEA, .CertificacionD{
+    width: 180px;
+    height: 100%;
+    border-radius: 15px;
+    background: var(--ColorTexto);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.CertificacionAP i, .CertificacionBA i, .CertificacionEA i, .CertificacionD i{
+    color: var(--FondoTarjetas);
+    font-size: calc(var(--TamañoTexto) * 2);
+}
+.CertificacionAP p:nth-child(2), .CertificacionBA p:nth-child(2), 
+.CertificacionEA p:nth-child(2), .CertificacionD p:nth-child(2){
+    color: var(--FondoP);
+    font-weight: bold;
+}
+.CertificacionAP p:nth-child(3), .CertificacionBA p:nth-child(3), 
+.CertificacionEA p:nth-child(3), .CertificacionD p:nth-child(3){
+    color: var(--FondoP);
+    opacity: .8;
+}
+.Perfil .Configuracion{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Perfil .Configuracion i{
+    background: var(--FondoBotones);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+.Perfil .Configuracion i:hover{
+    cursor: pointer;
+    color: var(--FondoBotones);
+    background: var(--ColorTexto);
+}
+
+@media (min-width: 1500px){
+    body{
+        background: var(--FondoAdopcion);
+        display: flex;
+        justify-content: center;
+    }
+    .Main{
+        width: 90%;
+    }
+}
+@media (min-width: 2000px){
+    body{
+        background: var(--FondoAdopcion);
+        display: flex;
+        justify-content: center;
+    }
+    .Main{
+        width: 70%;
+    }
+}
+@media (min-width: 2500px){
+    body{
+        background: var(--FondoAdopcion);
+        display: flex;
+        justify-content: center;
+    }
+    .Main{
+        width: 50%;
+    }
+    .Contenido .PorQueAdoptar .ImgAnimales{
+        height: 110%;
+    }
+}
+
+@media (max-width: 1024px){
+    .Main{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 95% 5%;
+        grid-template-areas: "Contenido"
+        "MenuPrincipal";
+    }
+    .MenuPrincipal{
+        grid-area: MenuPrincipal;
+        flex-direction: row;
+    }
+    
+    .MenuPrincipal .Logo{
+        display: none;
+    }
+    .MenuPrincipal .Opciones{
+        flex-direction: row;
+    }
+    .MenuPrincipal .Opciones i{
+        padding: 0;
+    }
+    .MenuPrincipal .Opciones i:nth-child(1){
+        background: none;
+        border-radius: 0;
+    }
+    .Contenido{
+        grid-template-rows: 8% 25% auto;
+    }
+    .Perfil{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        z-index: 1000;
+    }
+    .Perfil .Notificaciones i:nth-child(2){
+        display: block;
+    }
+    .Perfil .InformacionPersonal img{
+        width: 15%;
+    }
+    .Perfil .TusAdopciones p:nth-child(2){
+        font-size: calc(var(--TamañoTexto) * 8);
+    }
+    .Perfil .TusAdopciones button{
+        width: 15%;
+    }
+    .Perfil .TusAdopciones::after, .Perfil .TusAdopciones::before{
+        width: 95%;
+    }
+    .Izquierda, .Derecha{
+        display: none !important;
+    }
+    .Contenido{
+        grid-area: Contenido;
+    }
+    .Contenido .Buscar i:nth-child(3){
+        display: block;
+    }
+    .Contenido .Buscar input{
+        padding-right: 25px;
+    }
+}
+@media (max-width: 800px){
+    .Main{
+        grid-template-rows: 93% 7%;
+    }
+    .Contenido{
+        grid-template-rows: 8% 40% auto;
+    }
+    .Perfil .InformacionPersonal img{
+        width: 13%;
+    }
+    .Perfil .TusAdopciones p:nth-child(2){
+        font-size: calc(var(--TamañoTexto) * 6);
+    }
+    .Perfil .TusAdopciones::after, .Perfil .TusAdopciones::before{
+        width: 93%;
+    }
+    .Izquierda, .Derecha{
+        display: block !important;
+    }
+    .Contenido{
+        grid-area: Contenido;
+    }
+    .Contenido .Buscar i:nth-child(3){
+        display: block;
+    }
+    .Contenido .Buscar input{
+        padding-right: 25px;
+    }
+}
+@media (max-width: 540px){
+    :root{
+        --TamañoTexto: 12px;
+        --TamañoIconos: 15px;
+    }
+    .Contenido{
+        padding: 0px 20px;
+    }
+    .Contenido .PorQueAdoptar .TitlePQA p:nth-child(1){
+        font-size: calc(var(--TamañoTexto) + 8px);
+    }
+    .Contenido .TodasLasPublicaciones .TitlePublicaciones p{
+        font-size: calc(var(--TamañoTexto) + 8px);
+    }
+    .Contenido .TodasLasPublicaciones .TitlePublicaciones i{
+        padding: 7px;
+    }
+    .Contenido .TodasLasPublicaciones .Publicacion{
+        grid-column: span 2; 
+    }
+    .Perfil{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        z-index: 1000;
+    }
+    .Perfil .InformacionPersonal, .Perfil .TusAdopciones{
+        height: 24%;
+    }
+    .Perfil .TusAdopciones p:nth-child(2){
+        font-size: calc(var(--TamañoTexto) * 3);
+    }
+    .Perfil .TusAdopciones::after, .Perfil .TusAdopciones::before{
+        width: 90%;
+    }
+    .Perfil .TusCertificaciones{
+        height: 36%;
+    }
+}
+@media (max-width: 414px){
+    :root{
+        --TamañoTexto: 10px;
+        --TamañoIconos: 14px;
+    }
+    .Contenido{
+        padding: 0px 20px;
+    }
+    .Contenido .PorQueAdoptar{
+        grid-template-rows: 20% 40% 40%;
+        grid-template-areas: "TitlePQA TitlePQA"
+        "BeneficionesPQA BeneficionesPQA"
+        "ImgAnimales ImgAnimales";
+    }
+    .Contenido .PorQueAdoptar .TitlePQA p:nth-child(1){
+        font-size: calc(var(--TamañoTexto) + 6px);
+    }
+    .Contenido .TodasLasPublicaciones{
+        margin-top: 0px;
+    }
+    .Contenido .TodasLasPublicaciones .TitlePublicaciones p{
+        font-size: calc(var(--TamañoTexto) + 6px);
+    }
+    .Contenido .TodasLasPublicaciones{
+        grid-template-rows: 60px 150px;
+    }
+    .Contenido .TodasLasPublicaciones .Publicacion{
+        grid-column: span 2; 
+        max-height: 150px;
+        min-height: 150px;
+    }
+    .Perfil{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        z-index: 1000;
+    }
+    .Perfil .InformacionPersonal img, .Perfil .TusAdopciones button{
+        width: 20%;
+    }
+    .Perfil .TusAdopciones::after, .Perfil .TusAdopciones::before{
+        width: 90%;
+    }
+}
+@media (max-width: 375px){
+    :root{
+        --TamañoTexto: 10px;
+        --TamañoIconos: 12px;
+    }
+    .Contenido .PorQueAdoptar .TitlePQA p:nth-child(1){
+        font-size: calc(var(--TamañoTexto) + 4px);
+    }
+    .Contenido .TodasLasPublicaciones{
+        margin-top: 0px;
+    }
+    .Contenido .TodasLasPublicaciones .TitlePublicaciones p{
+        font-size: calc(var(--TamañoTexto) + 4px);
+    }
+    .Contenido .TodasLasPublicaciones .Publicacion{
+        grid-column: span 2; 
+    }
+    .Perfil{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        z-index: 1000;
+    }
+    .Perfil .InformacionPersonal img, .Perfil .TusAdopciones button{
+        width: 15%;
+    }
+    .Perfil .TusAdopciones p:nth-child(2){
+        font-size: calc(var(--TamañoTexto) * 3);
+    }
+    .Perfil .TusAdopciones::after, .Perfil .TusAdopciones::before{
+        width: 90%;
+    }
+}
+@media (max-width: 320px){
+    :root{
+        --TamañoTexto: 8px;
+        --TamañoIconos: 10px;
+    }
+    .Contenido .TodasLasPublicaciones{
+        grid-template-rows: 60px 120px;
+    }
+    .Contenido .TodasLasPublicaciones .Publicacion{
+        grid-column: span 2; 
+        max-height: 120px;
+        min-height: 120px;
+    }
+}

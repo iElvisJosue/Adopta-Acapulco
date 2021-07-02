@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="Imagenes/Adopta.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Adopta</title>
+</head>
+<body>
+    <main class="Main">
+
+        <div class="MenuPrincipal">
+            <div class="Logo">
+                <img src="Imagenes/Adopta.png" alt="Logo Adopta">
+            </div>
+            <div class="Opciones">
+                <!--<div>Iconos diseñados por <a href="https://www.flaticon.es/autores/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>-->
+                <i class="fas fa-home"></i> <!--Regresar a la pagina principal-->
+                <i class="fas fa-search"></i> <!--Buscar general-->
+                <i class="fas fa-paw"></i> <!--Buscar por tipo mascota-->
+                <i class="fas fa-folder-plus"> <!--Agregar publicaciones--></i>
+                <i class="fas fa-hand-holding-usd"></i> <!--Donaciones-->
+                <i class="far fa-question-circle"> <!--Acerca de nosotros--></i>
+            </div>
+        </div>
+
+        <div class="Contenido">
+            <div class="Buscar">    
+                <i class="fas fa-search"></i>
+                <input type="text" id="BusquedaGeneral" placeholder="Buscar">
+                <i class="far fa-user-circle IconoPerfil"></i>
+            </div>
+
+            <div class="PorQueAdoptar">
+                <div class="TitlePQA">
+                    <p>¿Por qué adoptar una mascota?</p>
+                    <p>Detalles <i class="fas fa-chevron-right"></i></p>
+                </div>
+                <div class="ImgAnimales">
+                </div>
+                <div class="BeneficionesPQA">
+                    <div class="Benefecio">
+                        <i class="fas fa-heartbeat" style="color: #dc4a46;"></i>
+                        <p>Salvas una vida</p>
+                    </div>
+                    <div class="Benefecio">
+                        <i class="far fa-laugh-beam" style="color: #efd52e;"></i>
+                        <p>Mejorará tu ánimo</p>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="TodasLasPublicaciones">
+                <div class="TitlePublicaciones">
+                    <p>¡Desliza y adopta!</p>
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <div class="Publicacion">
+                    <img src="Imagenes/Perro.png" alt="Mascota">
+                    <div class="DatosPublicacion">
+                        <p>Nombre</p>
+                        <p>Lugar</p>
+                    </div>
+                    <div class="MensajePublicacion">
+                        <p>Adoptame</p>
+                    </div>
+                </div>
+                <div class="Publicacion">
+                    <img src="Imagenes/Gato.jpg" alt="Mascota">
+                    <div class="DatosPublicacion">
+                        <p>Nombre</p>
+                        <p>Lugar</p>
+                    </div>
+                    <div class="MensajePublicacion">
+                        <p>Adoptame</p>
+                    </div>
+                </div>
+                <div class="Publicacion">
+                    <img src="Imagenes/Australiano.jpg" alt="Mascota">
+                    <div class="DatosPublicacion">
+                        <p>Nombre</p>
+                        <p>Lugar</p>
+                    </div>
+                    <div class="MensajePublicacion">
+                        <p>Adoptame</p>
+                    </div>
+                </div>
+                <div class="Publicacion">
+                    <img src="Imagenes/Hamster.jpg" alt="Mascota">
+                    <div class="DatosPublicacion">
+                        <p>Nombre</p>
+                        <p>Lugar</p>
+                    </div>
+                    <div class="MensajePublicacion">
+                        <p>Adoptame</p>
+                    </div>
+                </div>
+                                
+            </div>
+        </div>
+
+        <div class="Perfil">
+
+            <div class="Notificaciones">
+                <i class="far fa-bell"></i>
+                <i class="far fa-times-circle CerrarPerfil"></i>
+            </div>
+
+            <div class="InformacionPersonal">
+                <img src="Imagenes/Avatars/1.png" alt="Foto De Perfil">
+                <p style="margin-top: 15px">Nombre</p>
+                <p>Informacion</p>
+            </div>
+
+            <div class="TusAdopciones">
+                <p>Tus Adopciones</p>
+                <p>4</p>
+                <button>Adoptar <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="TusCertificaciones">
+                <p>Tus Certificaciones</p>
+                <i class="fas fa-chevron-left Izquierda"></i>
+                <i class="fas fa-chevron-right Derecha"></i>
+                <div class="VerCertificaciones">
+
+                    <div class="CertificacionAP">
+                        <i class="far fa-thumbs-up"></i> <!--Empiezas en adopcion-->
+                        <p style="margin-top: 10px">AP</p>
+                        <p>Ha adoptado más de..</p>
+                    </div>
+                    
+                    <div class="CertificacionBA">
+                        <i class="far fa-heart"></i> <!--Bueno en adopcion-->
+                        <p style="margin-top: 10px">BA</p>
+                        <p>Ha adoptado más de..</p>
+                    </div>
+
+                    <div class="CertificacionEA">
+                        <i class="fas fa-hand-holding-heart"></i> <!--Excelente en adopcion-->
+                        <p style="margin-top: 10px">AE</p>
+                        <p>Ha adoptado más de..</p>
+                    </div>
+
+                    <div class="CertificacionD">
+                        <i class="fas fa-hand-holding-usd"></i> <!-- Donador -->
+                        <p style="margin-top: 10px">D</p>
+                        <p>Ha donado 1 o más...</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="Configuracion">
+                <i class="fas fa-cog"></i>
+            </div>
+
+        </div>
+
+        <script src="index.js"></script>
+
+    </main>
+</body>
+</html>
