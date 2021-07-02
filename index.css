@@ -167,6 +167,7 @@ body{
     gap: 10px;
 }
 .Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio{
+    position: relative;
     background: var(--FondoBotones);
     display: flex;
     flex-direction: column;
@@ -179,6 +180,22 @@ body{
     padding: 0px 15px;
     gap: 10px;
     overflow: hidden;
+    cursor: pointer;
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio p:nth-child(3){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--FondoBotones);
+    left: 0;
+    top: 110%;
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+}
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio:hover p:nth-child(3),
+.Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio:active p:nth-child(3){
+    top: 0%;
 }
 .Contenido .PorQueAdoptar .BeneficionesPQA .Benefecio i{
     font-size: calc(var(--TamañoTexto) * 2);
